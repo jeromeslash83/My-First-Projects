@@ -1,5 +1,5 @@
 print("Welcome to Jerome's BMI Calculator!")
-def BMI_calculator():
+while True:
     Name = input("What is your name? ")
     Weight = input("What is your weight (in kgs)? ")
     Height = input("What is your height(in m)?")
@@ -7,7 +7,6 @@ def BMI_calculator():
     BMI = float(Weight) / (float(Height) * float(Height))
 
     print("Your BMI is", BMI)
-
     if BMI < 18.5:
         print(Name, "You are underweight.")
     elif BMI >= 18.5 or BMI == 24.9:
@@ -15,4 +14,7 @@ def BMI_calculator():
     elif BMI >=25.0 or BMI == 30.0:
         print(Name, "You're overweight.")
     else:
-        print(Name, "You're obese."
+        print(Name, "You're obese.")
+    ans = input('continue? (y/n):')
+    if ans == 'n':
+        break
