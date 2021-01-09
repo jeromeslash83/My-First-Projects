@@ -4,11 +4,11 @@ while True:
     div_100 = year/ 100
     div_400 = year / 400
     if year % 4 == 0:
-        if year % 100 == 0 and year % 400 == 0:
-            print("Leap Year.")
-        elif year % 100 == 0 and year % 400 != 0:
-            print("Not Leap Year.")
+        print("Leap Year.")
+        if year % 100 == 0:
+            if year % 400 == 0
+                print("Leap Year.")
         else:
-            print("Leap Year.")
+            print("Not Leap Year.")
     else:
         print("Not Leap Year.")
