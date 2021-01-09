@@ -9,9 +9,9 @@ while True:
     print("Your BMI is", BMI)
     if BMI < 18.5:
         print(Name, "You are underweight.")
-    elif BMI >= 18.5 or BMI == 24.9:
+    elif BMI < 25:
         print(Name, "You're normal.")
-    elif BMI >=25.0 or BMI == 30.0:
+    elif BMI < 30:
         print(Name, "You're overweight.")
     else:
         print(Name, "You're obese.")
