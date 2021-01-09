@@ -9,5 +9,5 @@ while True:
     total = ((bill_int * tip_int) + bill_int) / split_int
     print("Your total bill for each person is:", total)
     continue_program = input("Do you want to make a calculation again? (Y/N) ")
-    if continue_program.lower() == "N":
+    if continue_program.lower() == "n":
         break
