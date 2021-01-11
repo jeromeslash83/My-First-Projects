@@ -1,28 +1,28 @@
 import random
 print("Welcome to the Rock, Paper, Scissors game!")
-choices = ['Rock', 'Paper', 'Scissors']
-choice = input("Pick a weapon:\nRock, Paper, Scissors ")
-opponent = random.choice(choices)
+choice1 = input("Pick a weapon:\n0 for Rock, 1 for Paper, 2 for Scissors ")
+choice = int(choice1)
+opponent = random.randint(0,2)
 print(f'You chose: {choice}')
 print(f'I chose: {opponent}')
 
-if choice.lower() == 'rock' and opponent == 'Rock':
+if choice == 0 and opponent == 0:
     print("It's a tie")
-elif choice.lower() == 'rock' and opponent == 'Paper':
+elif choice == 0 and opponent == 1:
     print('I win!')
-elif choice.lower() == 'rock' and opponent == 'Scissors':
+elif choice == 0 and opponent == 2:
     print('You win!')
-
-if choice.lower() == 'paper' and opponent == 'Paper':
+elif choice == 1 and opponent == 1:
     print("It's a tie")
-elif choice.lower() == 'paper' and opponent == 'Scissors':
+elif choice == 1 and opponent == 2:
     print('I win!')
-elif choice.lower() == 'paper' and opponent == 'Rock':
+elif choice == 1 and opponent == 0:
     print('You win!')
-
-if choice.lower == 'scissors' and opponent == 'Scissors':
+elif choice == 2 and opponent == 2:
     print("It's a tie")
-elif choice.lower == 'scissors' and opponent == 'Rock':
+elif choice == 2 and opponent == 0:
     print('I win!')
-elif choice.lower == 'scissors' and opponent == 'Paper':
+elif choice == 2 and opponent == 1:
     print('You win!')
+else:
+    print("Wrong number please try again")
