@@ -3,8 +3,9 @@ print("Welcome to the Rock, Paper, Scissors game!")
 choice1 = input("Pick a weapon:\n0 for Rock, 1 for Paper, 2 for Scissors ")
 choice = int(choice1)
 opponent = random.randint(0,2)
-print(f'You chose: {choice}')
-print(f'I chose: {opponent}')
+wee = ['Rock', 'Paper', 'Scissors']
+print(f'You chose: {wee[choice]}')
+print(f'I chose: {wee[opponent]}')
 if choice >= 3 or <0:
     print("Wrong number please try again")
 elif choice == 0 and opponent == 0:
