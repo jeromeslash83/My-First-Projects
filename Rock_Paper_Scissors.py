@@ -5,7 +5,7 @@ choice = int(choice1)
 opponent = random.randint(0,2)
 print(f'You chose: {choice}')
 print(f'I chose: {opponent}')
-if choice >2 or <0:
+if choice >= 3 or <0:
     print("Wrong number please try again")
 elif choice == 0 and opponent == 0:
     print("It's a tie")
