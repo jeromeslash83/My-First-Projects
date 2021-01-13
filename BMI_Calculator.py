@@ -17,4 +17,5 @@ while True:
         print(Name, "You're obese.")
     ans = input('continue? (y/n):')
     if ans == 'n':
+        print('OK have a nice day!')
         break
