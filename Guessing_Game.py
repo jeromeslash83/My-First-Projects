@@ -1,45 +1,38 @@
+#HANGMAN GAME
 import random
-attempts_list = []
-def show_scores():
-    if len(attempts_list) <= 0:
-        print("There are no high scores currently in the game, you can be the one to take it!")
-    else:
-        print("The current high score is {} attempts".format(min(attempts_list)))
-def start_game():
-    random_number = int(random.randint(1, 20))
-    print("Hello there gamer! Welcome to Jslash's Random Number Guessing game!")
-    player = input("What is your name? ")
-    want_to_play = input("Hi, {}, Do you want to play the game? (Type Yes/No) ".format(player))
-    attempts = 0
-    show_scores()
-    while want_to_play.lower() == "yes":
-        try:
-            guess = input("Pick a number between 0 to 20. ")
-            if int(guess) < 1 or int(guess) > 20:
-                raise ValueError("Please choose a number in within the given data.") 
-            if int(guess) == random_number:
-                print("Congratulations! You got it!")
-                attempts += 1
-                attempts_list.append(attempts)
-                print("It took you {} attempts to guess the correct answer".format(attempts))
-                play_again = input("Would you like to play again? (Type Yes/No) ")
-                attempts = 0
-                show_scores()
-                random_number = int(random.randint(1, 20))
-                if play_again.lower() == "no":
-                    print("Okay, thank you for playing", player)
-                    break
-            elif int(guess) > random_number:
-                print("lower")
-                attempts += 1
-            elif int(guess) < random_number:
-                print("higher")
-                attempts += 1
-        except ValueError as err:
-            print("That's not a valid value. Try again...")
-            print("({})".format(err))
-    else:
-        print("That's cool, have a good one!")
-if __name__ == '__main__':
-    start_game()
+word_list = ["aardvark", "baboon", "camel"]
+chosen_word = random.choice(word_list)
+
+print(f'Pssst, the solution is {chosen_word}.')
+
+display = []
+for n in chosen_word:
+    display.append('_')
+print(display)
+lives = []
+loser = 'HANGMAN'
+end_game = False
+lose = 0
+number = int(len(chosen_word))
+while not end_game:
+    guess = input("Guess a letter: ").lower()
+    for n in range(number) :
+        letter = chosen_word[n]
+        if letter == guess:
+            display[n] = guess
+
+    if not guess in chosen_word:
+        lose += 1
+        for i in range(1,8):
+            if lose == i:
+                lives.append(loser[i-1])
     
+    if '_' not in display:
+        print('You Win')
+        end_game = True
+
+    if lose == 7:
+        print('You Lose.')
+        break
+    print(f'Correct answer:\n{display}\n\n')
+    print(f'Lives:\n{lives}\n')
