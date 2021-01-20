@@ -10,20 +10,38 @@ _________                                      _________ .__       .__
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
+while True:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
 
-def encrypt():
-    letter_number = len(text)
-    result = ''
-    for i in range(0, letter_number):
-        letter_index = int(alphabet.index(text[i]))
-        num = letter_index + shift
-        if num > letter_number:
-            result += alphabet[num % letter_number]
-        else:
-            result += alphabet[num]
-    print(result)
+    def encrypt(message, shifting):
+        letter_number = len(text)
+        result = ''
+        for i in range(0, letter_number):
+            letter_index = int(alphabet.index(text[i]))
+            num = letter_index + shift
+            if num > 25:
+                result += alphabet[(num % 26)]
+            else:
+                result += alphabet[num]
+        print(f"The encoded text is: {result}.")
 
-encrypt()
+    def decrypt(message, shifting):
+        letter_number = len(text)
+        result2 = ''
+        for i in range(0, letter_number):
+            letter_index = int(alphabet.index(text[i]))
+            num2 = letter_index - (shift)
+            if num2 <= -1:
+                result2 += alphabet[num2]
+            else:
+                result2 += alphabet[num2]
+        print(f"The encoded text is: {result2}.")
+
+    if direction == 'encode':
+        encrypt(message = text, shifting = shift)
+    elif direction == 'decode':
+        decrypt(message = text, shifting = shift)
+    else:
+        print('Wrong input. Try again.')
