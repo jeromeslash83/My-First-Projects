@@ -22,7 +22,7 @@ while True:
             letter_index = int(alphabet.index(text[i]))
             num = letter_index + shift
             if num > 25:
-                result += alphabet[(num % 26)]
+                result += alphabet[(num % len(alphabet))]
             else:
                 result += alphabet[num]
         print(f"The encoded text is: {result}.")
@@ -37,7 +37,7 @@ while True:
                 result2 += alphabet[num2]
             else:
                 result2 += alphabet[num2]
-        print(f"The encoded text is: {result2}.")
+        print(f"The decoded text is: {result2}.")
 
     if direction == 'encode':
         encrypt(message = text, shifting = shift)
