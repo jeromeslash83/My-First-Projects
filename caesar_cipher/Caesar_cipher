@@ -31,6 +31,6 @@ while True:
                 result += alphabet[num2]
             else:
                 print('Wrong input. Try again.')
-        print(f"The encoded text is: {result}.")
+        print(f"The {movement}d text is: {result}.")
     encrypt(message = text, shifting = shift, movement = direction)
 
