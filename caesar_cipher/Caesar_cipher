@@ -16,21 +16,25 @@ while True:
     shift = int(input("Type the shift number:\n"))
 
     def encrypt(message, shifting, movement):
-        letter_number = len(text)
+        letter_number = len(alphabet)
         result = ''
-        for i in range(0, letter_number):
-            letter_index = int(alphabet.index(text[i]))
-            if direction == 'encode':
-                num = letter_index + shift
-                if num > 25:
-                    result += alphabet[(num % len(alphabet))]
+        if movement == 'decode':
+            shifting *= -1
+        for char in message:
+            if char in alphabet:
+                pos = alphabet.index(char)
+                move = pos + shifting
+                if move > 25 or move < -26:
+                    result += alphabet[move % letter_number]
                 else:
-                    result += alphabet[num]
-            elif direction == 'decode':
-                num2 = letter_index - (shift)
-                result += alphabet[num2]
+                    result += alphabet[move]
             else:
-                print('Wrong input. Try again.')
-        print(f"The {movement}d text is: {result}.")
-    encrypt(message = text, shifting = shift, movement = direction)
+                result += char
+        print(f"The {direction}d result is: {result}")
 
+    encrypt(message = text, shifting = shift, movement = direction)
+    continuation = input("Do you want to continue? Y or N\n")
+    if continuation.lower() =='y':
+        continue
+    else:
+        break
