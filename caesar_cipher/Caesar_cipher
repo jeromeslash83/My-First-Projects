@@ -15,33 +15,28 @@ while True:
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
 
-    def encrypt(message, shifting):
+    def Cipher(message, shifting, movement):
         letter_number = len(text)
         result = ''
-        for i in range(0, letter_number):
-            letter_index = int(alphabet.index(text[i]))
-            num = letter_index + shift
-            if num > 25:
-                result += alphabet[(num % len(alphabet))]
-            else:
-                result += alphabet[num]
-        print(f"The encoded text is: {result}.")
+        if direction == 'encode':
+            for i in range(0, letter_number):
+                letter_index = int(alphabet.index(text[i]))
+                num = letter_index + shift
+                if num > 25:
+                    result += alphabet[(num % len(alphabet))]
+                else:
+                    result += alphabet[num]
+            print(f"The encoded text is: {result}.")
+        elif direction == 'decode':
+            for i in range(0, letter_number):
+                letter_index = int(alphabet.index(text[i]))
+                num2 = letter_index - (shift)
+                if num2 <= -1:
+                    result += alphabet[num2]
+                else:
+                    result += alphabet[num2]
+            print(f"The decoded text is: {result}.")
+        else:
+            print('Wrong input. Try again.')
+    Cipher(message = text, shifting = shift, movement = direction)
 
-    def decrypt(message, shifting):
-        letter_number = len(text)
-        result2 = ''
-        for i in range(0, letter_number):
-            letter_index = int(alphabet.index(text[i]))
-            num2 = letter_index - (shift)
-            if num2 <= -1:
-                result2 += alphabet[num2]
-            else:
-                result2 += alphabet[num2]
-        print(f"The decoded text is: {result2}.")
-
-    if direction == 'encode':
-        encrypt(message = text, shifting = shift)
-    elif direction == 'decode':
-        decrypt(message = text, shifting = shift)
-    else:
-        print('Wrong input. Try again.')
