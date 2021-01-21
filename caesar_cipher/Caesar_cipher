@@ -15,28 +15,22 @@ while True:
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
 
-    def Cipher(message, shifting, movement):
+    def encrypt(message, shifting, movement):
         letter_number = len(text)
         result = ''
-        if direction == 'encode':
-            for i in range(0, letter_number):
-                letter_index = int(alphabet.index(text[i]))
+        for i in range(0, letter_number):
+            letter_index = int(alphabet.index(text[i]))
+            if direction == 'encode':
                 num = letter_index + shift
                 if num > 25:
                     result += alphabet[(num % len(alphabet))]
                 else:
                     result += alphabet[num]
-            print(f"The encoded text is: {result}.")
-        elif direction == 'decode':
-            for i in range(0, letter_number):
-                letter_index = int(alphabet.index(text[i]))
+            elif direction == 'decode':
                 num2 = letter_index - (shift)
-                if num2 <= -1:
-                    result += alphabet[num2]
-                else:
-                    result += alphabet[num2]
-            print(f"The decoded text is: {result}.")
-        else:
-            print('Wrong input. Try again.')
-    Cipher(message = text, shifting = shift, movement = direction)
+                result += alphabet[num2]
+            else:
+                print('Wrong input. Try again.')
+        print(f"The encoded text is: {result}.")
+    encrypt(message = text, shifting = shift, movement = direction)
 
