@@ -1,3 +1,4 @@
+#BMI CALCULATOR
 print("Welcome to Jerome's BMI Calculator!")
 while True:
     Name = input("What is your name? ")
