@@ -1,6 +1,5 @@
 #CALCULATOR APP
 from CalcArt import logo
-print(logo)
 def add(n1, n2):
   return n1 + n2
 
@@ -14,6 +13,7 @@ def divide(n1, n2):
   return n1 / n2
 
 def calculator():
+  print(logo)
   n1 = int(input("What's the first number? "))
   loop = True
   while loop:
