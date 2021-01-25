@@ -14,7 +14,7 @@ def divide(n1, n2):
 
 def calculator():
   print(logo)
-  n1 = int(input("What's the first number? "))
+  n1 = float(input("What's the first number? "))
   loop = True
   while loop:
 
@@ -35,7 +35,7 @@ def calculator():
       print('Wrong input try again.')
       to_do = input("What operation are we gonna do? ")
       
-    n2 = int(input("What's the next number? "))
+    n2 = float(input("What's the next number? "))
 
     answer = operations[to_do](n1, n2)
 
