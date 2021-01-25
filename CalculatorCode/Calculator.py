@@ -34,7 +34,7 @@ while loop:
     print('Wrong input try again.')
     to_do = input("What operation are we gonna do? ")
     
-  n2 = int(input("What's the second number? "))
+  n2 = int(input("What's the next number? "))
 
   answer = operations[to_do](n1, n2)
 
