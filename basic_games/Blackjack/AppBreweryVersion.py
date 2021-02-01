@@ -12,9 +12,9 @@ def deal_card():
 player_card = []
 dealer_card = []
 for _ in range(2):
-  dealt_card = deal_card()
-  player_card.append(dealt_card)
+  player_card.append(deal_card())
+  dealer_card.append(deal_card())
 
-dealer_card.append(deal_card())
+
   
 
