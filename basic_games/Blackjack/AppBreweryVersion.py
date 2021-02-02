@@ -26,6 +26,8 @@ dealer_card = []
 for _ in range(2):
   player_card.append(deal_card())
   dealer_card.append(deal_card())
+  
+calculate_score()
 
 
   
