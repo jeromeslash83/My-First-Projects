@@ -23,12 +23,16 @@ def calculate_score(cards):
 
 player_card = []
 dealer_card = []
+is_game_over = False
 for _ in range(2):
   player_card.append(deal_card())
   dealer_card.append(deal_card())
   
-calculate_score()
+player_total = calculate_score(player_card)
+dealer_total = calculate_score(dealer_card)
 
+if player_total == 0 or dealer_total == 0 or player_total > 21:
+  is_game_over = True
 
   
 
