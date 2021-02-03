@@ -36,6 +36,7 @@ def guessing_game():
                     easy = 0
                 else:
                     print('Wrong input. Try again.')
+                print(f"You have {easy} chances left.")
             print("You lost chances. Game over.")
             repeat()
         elif difficulty == 'hard':
@@ -53,6 +54,7 @@ def guessing_game():
                     hard = 0
                 else:
                     print('Wrong input. Try again.')
+                print(f"You have {hard} chances left.")
             print("You lost chances. Game over.")
             repeat()
         else:
