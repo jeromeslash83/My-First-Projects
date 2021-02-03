@@ -20,7 +20,7 @@ def guessing_game():
         difficulty = input("Choose a difficulty between 'easy' and 'hard':\n")
         easy = 10
         hard = 5
-        random_number = random.randint(1,101)
+        random_number = random.randint(1,100)
         if difficulty == 'easy':
             while easy != 0:
                 guess = int(input("Guess the number:"))
