@@ -10,6 +10,8 @@ high_score = 0
 game = True
 A = random.choice(data)
 B = random.choice(data)
+if A == B:
+    B = random.choice(data)
 def choices(a,b):
     print(f"Compare A: {a['name']}, a {a['description']} from {a['country']}.")
     print(art.vs)
@@ -34,6 +36,8 @@ while game:
             print("Correct guess.")
             print(f"Your score {high_score}.")
             B = random.choice(data)
+            if A == B:
+                B = random.choice(data)
         else:
             print("Wrong guess. Game over.")
             print(f"Your score is {high_score}.")
@@ -45,6 +49,8 @@ while game:
             high_score += 1
             print("Correct guess.")
             print(f"Your score {high_score}.")
+            B = random.choice(data)
+            if A == B:
             B = random.choice(data)
         else:
             print("Wrong guess. Game over.")
