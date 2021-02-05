@@ -4,6 +4,7 @@ import random
 from art import logo
 from art import vs
 from game_data import data
+from replit import clear()
 
 print(logo)
 score = 0
@@ -48,6 +49,9 @@ while continue_game:
     a_follower_count = account_a['follower_count']
     b_follower_count = account_b['follower_count']
     is_correct = check_answer(guess, a_follower_count, b_follower_count)
+    
+    clear()
+    print(logo)
 
     #Give user feedback on their guess.
     if is_correct:
