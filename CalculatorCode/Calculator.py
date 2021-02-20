@@ -1,5 +1,7 @@
 #CALCULATOR APP
 from CalcArt import logo
+
+#OPERATIONS
 def add(n1, n2):
   return n1 + n2
 
